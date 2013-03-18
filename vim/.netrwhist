@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/topfunky/repos-private/mininews/app'
+let g:netrw_dirhist_2='/Users/topfunky/repos-private/mininews/app/controllers'
+let g:netrw_dirhist_3='/Users/topfunky'
+let g:netrw_dirhist_4='/Users/topfunky/bin/dotfiles/vim/bundle/vim-peepopen'
+let g:netrw_dirhist_5='/Users/topfunky/bin/dotfiles/vim/bundle/vim-peepopen/plugin'
+let g:netrw_dirhist_6='/Users/topfunky/repos-private/blog-nesta'
