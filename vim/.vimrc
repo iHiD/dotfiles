@@ -89,3 +89,5 @@ map <leader>tm :tabmove
 "imap <down> <nop>
 "imap <left> <nop>
 "imap <right> <nop>
+
+iab >> ≫
