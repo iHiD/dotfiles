@@ -27,6 +27,7 @@ set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 
 set number                        " Show line numbers.
+set relativenumber                " Relative line numbers FTW.
 set ruler                         " Show cursor position.
 
 set incsearch                     " Highlight matches as you type.
@@ -91,3 +92,10 @@ map <leader>tm :tabmove
 "imap <right> <nop>
 
 iab >> ≫
+au FocusLost * :wa
+
+" Underline current line
+nnoremap <leader>1 yypVr= 
+
+" Reformat File
+map <F7> mzgg=G`z<CR> 
