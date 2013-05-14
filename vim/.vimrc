@@ -35,6 +35,7 @@ set ruler                         " Show cursor position.
 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
+set gdefault                      " Always assume /g in substituions
 
 set wrap                          " Turn on line wrapping.
 set scrolloff=3                   " Show 3 lines of context around the cursor.
@@ -65,15 +66,15 @@ set ttimeoutlen=1
 colorscheme railscasts
 
 " Tab mappings.
-map <leader>tt :tabnew<cr>
-map <leader>te :tabedit
-map <leader>tc :tabclose<cr>
-map <leader>to :tabonly<cr>
-map <leader>tn :tabnext<cr>
-map <leader>tp :tabprevious<cr>
-map <leader>tf :tabfirst<cr>
-map <leader>tl :tablast<cr>
-map <leader>tm :tabmove
+"map <leader>tt :tabnew<cr>
+"map <leader>te :tabedit
+"map <leader>tc :tabclose<cr>
+"map <leader>to :tabonly<cr>
+"map <leader>tn :tabnext<cr>
+"map <leader>tp :tabprevious<cr>
+"map <leader>tf :tabfirst<cr>
+"map <leader>tl :tablast<cr>
+"map <leader>tm :tabmove
 
 let mapleader = ","
 
@@ -81,15 +82,15 @@ iab >> »
 
 " Save file on lost focus
 au FocusLost * :wa
-au! BufWritePost .vimrc source %
+au! BufWritePost ~/.vimrc source %
 
 " Underline current line
 nnoremap <leader>1 yypVr=
 map <Leader>tt :wa<cr>:call RunCurrentTest()<CR>
+map <Leader>ta :wa<cr>:call RunAssociatedTests()<CR>
 
 " Reformat File
 map <F7> mzgg=G`z<CR>
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Test-running stuff
@@ -98,17 +99,8 @@ function! RunCurrentTest()
   let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
   if in_test_file
     call SetTestFile()
-
-    if match(expand('%'), '\.feature$') != -1
-      call SetTestRunner("!cucumber")
-      exec g:bjo_test_runner g:bjo_test_file
-    elseif match(expand('%'), '_spec\.rb$') != -1
-      call SetTestRunner("!~/.rvm/gems/ruby-2.0.0-p0/bin/zeus rspec --no-color")
-      exec g:bjo_test_runner g:bjo_test_file
-    else
-      call SetTestRunner("!ruby -Itest")
-      exec g:bjo_test_runner g:bjo_test_file
-    endif
+    call SetTestRunner("!~/.rvm/gems/ruby-2.0.0-p0/bin/zeus rspec --no-color")
+    exec g:bjo_test_runner g:bjo_test_file
   else
     exec g:bjo_test_runner g:bjo_test_file
   endif
@@ -118,13 +110,17 @@ function! SetTestRunner(runner)
   let g:bjo_test_runner=a:runner
 endfunction
 
+function! RunAssociatedTests()
+  exec "!/Users/iHiD/.rvm/rubies/ruby-2.0.0-p0/bin/ruby ./bin/run_associated_tests.rb " g:bjo_test_file
+endfunction
+
 function! RunCurrentLineInTest()
   let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
   if in_test_file
     call SetTestFileWithLine()
   end
 
-  exec "!~/.rvm/gems/ruby-2.0.0-p0/bin/zeus rspec" g:bjo_test_file . ":" . g:bjo_test_file_line
+  exec "!~/.rvm/gems/ruby-2.0.0-p0/bin/zeus rspec --no-color" g:bjo_test_file . ":" . g:bjo_test_file_line
 endfunction
 
 function! SetTestFile()
@@ -151,4 +147,18 @@ function! RenameFile()
     endif
 endfunction
 map <Leader>n :call RenameFile()<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" DELETE CURRENT FILE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! DeleteFile()
+    let filename = expand('%')
+    let confirm = input('Deleting ' . filename . '. Type delete to confirm: ')
+    if confirm == 'delete'
+        exec ':BD'
+        exec ':silent !rm ' . filename
+        redraw!
+    endif
+endfunction
+map <Leader>d :call DeleteFile()<cr>
 
