@@ -37,7 +37,7 @@ set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 set gdefault                      " Always assume /g in substituions
 
-set wrap                          " Turn on line wrapping.
+set nowrap                        " Turn on line wrapping.
 set scrolloff=3                   " Show 3 lines of context around the cursor.
 
 set title                         " Set the terminal's title
@@ -87,31 +87,54 @@ au! BufWritePost ~/.vimrc source %
 " Underline current line
 nnoremap <leader>1 yypVr=
 map <Leader>tt :wa<cr>:call RunCurrentTest()<CR>
+map <Leader>tl :wa<cr>:call RunCurrentLineInTest()<CR>
 map <Leader>ta :wa<cr>:call RunAssociatedTests()<CR>
+map <Leader>tz :call ToggleZeus()<CR>
 
 " Reformat File
 map <F7> mzgg=G`z<CR>
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Test-running stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:bjo_use_zeus = 1
+function! ToggleZeus()
+  if g:bjo_use_zeus
+    let g:bjo_use_zeus = 0
+  else
+    let g:bjo_use_zeus = 1
+  end
+endfunction
+
 function! RunCurrentTest()
   let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
   if in_test_file
     call SetTestFile()
-    call SetTestRunner("!~/.rvm/gems/ruby-2.0.0-p0/bin/zeus rspec --no-color")
-    exec g:bjo_test_runner g:bjo_test_file
-  else
-    exec g:bjo_test_runner g:bjo_test_file
+    
+    if match(expand('%'), '/features/') != -1
+      call SetTestRunner("rspec --no-color ", 0)
+    else
+      call SetTestRunner("rspec --no-color ", 1)
+    end
   endif
+
+  let l:cmd_start = (g:bjo_test_runner_use_zeus && g:bjo_use_zeus) ? "!zeus " : "!"
+  exec l:cmd_start . " " . g:bjo_test_runner . " " . g:bjo_test_file
 endfunction
 
-function! SetTestRunner(runner)
+function! SetTestRunner(runner, use_zeus)
   let g:bjo_test_runner=a:runner
+  let g:bjo_test_runner_use_zeus=a:use_zeus
 endfunction
 
 function! RunAssociatedTests()
-  exec "!/Users/iHiD/.rvm/rubies/ruby-2.0.0-p0/bin/ruby ./bin/run_associated_tests.rb " g:bjo_test_file
+  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
+  if in_test_file
+    call SetTestFile()
+  endif
+
+  exec "!ruby ./bin/run_associated_tests.rb " g:bjo_test_file
 endfunction
 
 function! RunCurrentLineInTest()
@@ -120,7 +143,8 @@ function! RunCurrentLineInTest()
     call SetTestFileWithLine()
   end
 
-  exec "!~/.rvm/gems/ruby-2.0.0-p0/bin/zeus rspec --no-color" g:bjo_test_file . ":" . g:bjo_test_file_line
+  let l:cmd_start = (g:bjo_test_runner_use_zeus && g:bjo_use_zeus) ? "!zeus " : "!"
+  exec l:cmd_start . " " . g:bjo_test_runner . " " . g:bjo_test_file . ":" . g:bjo_test_file_line
 endfunction
 
 function! SetTestFile()
