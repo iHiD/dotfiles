@@ -89,10 +89,11 @@ nnoremap <leader>1 yypVr=
 map <Leader>tt :wa<cr>:call RunCurrentTest()<CR>
 map <Leader>tl :wa<cr>:call RunCurrentLineInTest()<CR>
 map <Leader>ta :wa<cr>:call RunAssociatedTests()<CR>
+map <Leader>te :wa<cr>:call RunAllTests()<CR>
 map <Leader>tz :call ToggleZeus()<CR>
 
 " Reformat File
-map <F7> mzgg=G`z<CR>
+map <Leader>2 mzgg=G`z<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -105,6 +106,10 @@ function! ToggleZeus()
   else
     let g:bjo_use_zeus = 1
   end
+endfunction
+
+function! RunAllTests()
+  exec "!rspec spec"
 endfunction
 
 function! RunCurrentTest()
@@ -141,6 +146,12 @@ function! RunCurrentLineInTest()
   let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
   if in_test_file
     call SetTestFileWithLine()
+
+    if match(expand('%'), '/features/') != -1
+      call SetTestRunner("rspec --no-color ", 0)
+    else
+      call SetTestRunner("rspec --no-color ", 1)
+    end
   end
 
   let l:cmd_start = (g:bjo_test_runner_use_zeus && g:bjo_use_zeus) ? "!zeus " : "!"
