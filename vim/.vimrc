@@ -28,7 +28,7 @@ set smartcase                     " But case-sensitive if expression contains a 
 set history=500
 
 " Relative line numbers FTW.
-setglobal relativenumber            
+setglobal relativenumber
 autocmd BufEnter * set relativenumber
 
 set ruler                         " Show cursor position.
@@ -65,6 +65,14 @@ set ttimeoutlen=1
 " Or use vividchalk
 colorscheme railscasts
 
+set list listchars=tab:\ \ ,trail:·
+highlight ExtraWhitespace ctermbg=196 guibg=#FF1100 ctermfg=white guifg=white
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+:nnoremap W :%s/ *$//g<cr><c-o><cr>:nohlsearch<cr>
+
 " Tab mappings.
 "map <leader>tt :tabnew<cr>
 "map <leader>te :tabedit
@@ -86,7 +94,8 @@ au! BufWritePost ~/.vimrc source %
 
 " Underline current line
 nnoremap <leader>1 yypVr=
-map <Leader>tt :wa<cr>:call RunCurrentTest()<CR>
+map <Leader>tt :wa<cr>:call RunCurrentRspecTest()<CR>
+map <Leader>tf :wa<cr>:call RunCurrentTest()<CR>
 map <Leader>tl :wa<cr>:call RunCurrentLineInTest()<CR>
 map <Leader>ta :wa<cr>:call RunAssociatedTests()<CR>
 map <Leader>te :wa<cr>:call RunAllTests()<CR>
@@ -110,13 +119,20 @@ endfunction
 
 function! RunAllTests()
   exec "!rspec spec"
+  "exec \"!rspec spec spec/classes spec/models\"
 endfunction
 
 function! RunCurrentTest()
+  call SetTestFile()
+
+  exec "!ruby " . g:bjo_test_file
+endfunction
+
+function! RunCurrentRspecTest()
   let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
   if in_test_file
     call SetTestFile()
-    
+
     if match(expand('%'), '/features/') != -1
       call SetTestRunner("rspec --no-color ", 0)
     else
