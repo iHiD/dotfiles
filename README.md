@@ -14,4 +14,7 @@ ln -s ~/dotfiles/vim/bundle ~/.vim/bundle
 ln -s ~/dotfiles/vim/colors ~/.vim/colors
 ln -s ~/dotfiles/vim/ftplugin ~/.vim/ftplugin
 ln -s ~/dotfiles/vim/plugin ~/.vim/plugin
+
+cd ~/.vim/bundle
+git clone https://github.com/scrooloose/nerdtree.git
 ```
