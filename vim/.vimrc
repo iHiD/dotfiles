@@ -86,11 +86,13 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
 let mapleader = ","
 
-iab >> »
-
 " Save file on lost focus
 au FocusLost * :wa
 au! BufWritePost ~/.vimrc source %
+
+" Filetypes
+au BufNewFile,BufRead *.ahaml syntax on
+au BufNewFile,BufRead *.ahaml set filetype=haml
 
 " Underline current line
 nnoremap <leader>1 yypVr=
@@ -99,6 +101,7 @@ map <Leader>tf :wa<cr>:call RunCurrentTest()<CR>
 map <Leader>tl :wa<cr>:call RunCurrentLineInTest()<CR>
 map <Leader>ta :wa<cr>:call RunAssociatedTests()<CR>
 map <Leader>te :wa<cr>:call RunAllTests()<CR>
+map <Leader>rr :wa<cr>:call RunRake()<CR>
 map <Leader>tz :call ToggleZeus()<CR>
 
 " Reformat File
@@ -125,7 +128,12 @@ endfunction
 function! RunCurrentTest()
   call SetTestFile()
 
-  exec "!ruby " . g:bjo_test_file
+  let rspec_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
+  if rspec_file
+    call RunCurrentRspecTest()
+  else
+    exec "!bundle exec ruby " . g:bjo_test_file
+  end
 endfunction
 
 function! RunCurrentRspecTest()
@@ -181,6 +189,11 @@ endfunction
 function! SetTestFileWithLine()
   let g:bjo_test_file=@%
   let g:bjo_test_file_line=line(".")
+endfunction
+
+function! RunRake()
+  let l:cmd_start = (g:bjo_test_runner_use_zeus && g:bjo_use_zeus) ? "!zeus " : "!"
+  exec l:cmd_start . " rake"
 endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

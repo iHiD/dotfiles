@@ -1,0 +1,62 @@
+#######
+# Define how Bash prompt looks like:
+#######
+# User @ Host – working dir
+#export PS1=”\u@\h\w$ ”
+export PS1="\u@\h\w: "
+
+#######
+# Cli Colors
+#######
+export CLICOLOR=1
+
+#######
+# use yellow for dir’s
+#######
+export LSCOLORS=dxfxcxdxbxegedabagacad
+
+#######
+# Alias
+#######
+alias ls='ls -la'
+alias sd='svn diff !* | mate'
+
+#######
+# History Handling
+#######
+# Erase duplicates
+export HISTCONTROL=erasedups
+# resize history size
+export HISTSIZE=5000
+# append to bash_history if Terminal.app quits
+shopt -s histappend
+
+#####
+# Variables
+#####
+export EDITOR="/usr/bin/mate -w"
+export PGDATA="/usr/local/var/postgres"
+export PATH=$HOME/scripts:"/usr/local/bin:/usr/local/sbin:$PATH"
+export IHID="true"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:/Applications/eclipse/android_sdk/tools:/Applications/eclipse/android_sdk/platform-tools
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+export PATH=$HOME/local/bin:$PATH
+
+alias be="bundle exec"
+alias bert="bundle exec rake test"
+alias bers="bundle exec rails server"
+alias berc="bundle exec rails console"
+alias ernie="bundle exec rspec spec"
+alias gcp="git cherry-pick"
+alias gc="git checkout"
+alias gcm="git checkout master"
+alias gpom="git pull origin master"
+alias deploy="cd ~/Projects/meducation/website && bundle exec cap deploy"
+alias penguin="deploy"
+alias deploy_without_assets="cd ~/Projects/meducation/website && bundle exec cap deploy -S skip_assets=1"
+alias deploy_daemons="dsh -g daemons run-chef"
+alias dameons_status='dsh -g daemons "cat /etc/group | grep rvm: | cut -d':' -f4 | sed -e 's/rvm-root,//' | xargs ps -m -o user,group,sess,ppid,pid,nlwp,lwp,s,pcpu,etime,bsdtime,pmem,rss,sz,wchan:20,cmd:40 -u"'
