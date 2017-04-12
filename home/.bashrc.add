@@ -34,9 +34,7 @@ shopt -s histappend
 #####
 # Variables
 #####
-export EDITOR="/usr/bin/mate -w"
 export PGDATA="/usr/local/var/postgres"
-export PATH=$HOME/scripts:"/usr/local/bin:/usr/local/sbin:$PATH"
 export IHID="true"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

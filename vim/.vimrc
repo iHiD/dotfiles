@@ -31,6 +31,9 @@ set history=500
 setglobal relativenumber
 autocmd BufEnter * set relativenumber
 
+" Show markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 set ruler                         " Show cursor position.
 
 set incsearch                     " Highlight matches as you type.
@@ -93,6 +96,7 @@ au! BufWritePost ~/.vimrc source %
 " Filetypes
 au BufNewFile,BufRead *.ahaml syntax on
 au BufNewFile,BufRead *.ahaml set filetype=haml
+au Filetype python setl et ts=2 sw=2
 
 " Underline current line
 nnoremap <leader>1 yypVr=
