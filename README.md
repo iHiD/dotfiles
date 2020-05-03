@@ -1,3 +1,7 @@
+# Setting up a new Mac for development
+
+This is my personal setup for setting up a Mac for development. Suggestions welcome in issues. PRs less welcome unless you know me and are pretty sure I'd appreciate it :)
+
 ## Chrome
 
 Download, login. Get the order of accounts right.
