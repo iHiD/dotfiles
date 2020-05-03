@@ -2,3 +2,6 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 brew "git"
 brew "fish"
+
+tap "homebrew/cask-fonts"
+cask "font-fira-code"
