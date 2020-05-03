@@ -1,7 +1,23 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
+tap "homebrew/cask-fonts"
+
+# Essentials
 brew "git"
 brew "fish"
+brew "tmux"
 
-tap "homebrew/cask-fonts"
+# Ruby
+brew "ruby-install"
+brew "chruby"
+brew "chruby-fish"
+brew "gel"
+
+# Javascript
+brew 'nvm'
+
+# Databases
+brew 'mysql', restart_service: true
+
+
 cask "font-fira-code"

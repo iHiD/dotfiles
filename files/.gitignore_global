@@ -1,4 +1,8 @@
+# Vim swap files
 *.swp
 *.swo
 *.swn
 *.swm
+
+# Editor project files
+*.code-workspace
