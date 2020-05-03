@@ -18,6 +18,13 @@ In the dotfiles we have a Brewfile. We need to install brew, install git, clone 
 - `ln -s ~/.dotfiles/files/Brewfile ~/Brewfile`
 -  `cd ~ && brew bundle`
 
+## Git
+
+Configure Git correctly (it was installed in the step above)
+
+- `ln -s ~/.dotfiles/files/.gitconfig ~/.gitconfig`
+- `ln -s ~/.dotfiles/files/.gitignore_global ~/.gitignore_global`
+
 ## Terminal
 
 Load iHiD terminal from dotfiles:/files
