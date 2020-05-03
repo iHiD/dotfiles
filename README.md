@@ -1,20 +1,10 @@
-# My dotfiles
-========
+## Homebrew
 
-Clone to `~/.dotfiles`
+Firstly, we need Homebrew to manage dependencies. 
 
-```
-ln -s ~/.dotfiles/vim/.vimrc ~/.vimrc
-ln -s ~/.dotfiles/vim/.gvimrc ~/.gvimrc
+In the dotfiles we have a Brewfile. We need to install brew, install git, clone the dotfiles repo, then run the brewfile.
 
-mkdir ~/.vim
-ln -s ~/.dotfiles/vim/after ~/.vim/after
-ln -s ~/.dotfiles/vim/autoload ~/.vim/autoload
-ln -s ~/.dotfiles/vim/bundle ~/.vim/bundle
-ln -s ~/.dotfiles/vim/colors ~/.vim/colors
-ln -s ~/.dotfiles/vim/ftplugin ~/.vim/ftplugin
-ln -s ~/.dotfiles/vim/plugin ~/.vim/plugin
+- Install homebrew (https://brew.sh/)
+- `brew install git`
+- `git clone https://github.com/iHiD/dotfiles.git ~/.dotfiles`
 
-cd ~/.vim/bundle
-git clone https://github.com/scrooloose/nerdtree.git
-```
