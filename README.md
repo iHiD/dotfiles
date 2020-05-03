@@ -50,7 +50,6 @@ Download: https://www.alfredapp.com/
 
 ## Visual Studio Code
 
-Install from https://code.visualstudio.com/
-
-Copy settings:W
-`ln -s  ~/.dotfiles/files/code-settings.json ~/Library/Application\ Support/Code/User/settings.json`
+- Install from https://code.visualstudio.com/
+- Install settings sync: https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync&ssr=false#overview
+- [Option/Shift/D] to sync settings from https://gist.github.com/iHiD/55c8ceaebfeef15f0c5ee704e984d69b
