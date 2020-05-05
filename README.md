@@ -2,10 +2,6 @@
 
 This is my personal setup for setting up a Mac for development. Suggestions welcome in issues. PRs less welcome unless you know me and are pretty sure I'd appreciate it :)
 
-## Chrome
-
-Download, login. Get the order of accounts right.
-
 ## 1Password
 
 Download, configure. Phone required.
@@ -26,10 +22,13 @@ Firstly, we need Homebrew to manage dependencies.
 
 In the dotfiles we have a Brewfile. We need to install brew, install git, clone the dotfiles repo, then run the brewfile.
 
+
 - Install homebrew: https://brew.sh/
 - `brew install git`
 - `git clone https://github.com/iHiD/dotfiles.git ~/.dotfiles`
 - `ln -s ~/.dotfiles/files/Brewfile ~/Brewfile`
+
+Ensure everything is uncommented in the Brewfile then run:
 - `cd ~ && brew bundle`
 
 ## Git
