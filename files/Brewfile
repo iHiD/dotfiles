@@ -19,5 +19,7 @@ brew 'nvm'
 # Databases
 brew 'mysql', restart_service: true
 
-
+# Casks
 cask "font-fira-code"
+#cask 'google-chrome'
+cask 'spotify'

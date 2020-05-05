@@ -30,4 +30,15 @@ source /usr/local/share/chruby/auto.fish
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias ls="ls -lasG"
 
+#alias bert="bundle exec rake test"
+alias bert="RUBYOPT='-W:no-deprecated' bundle exec rake test"
+alias rdm="RUBYOPT='-W:no-deprecated' rake db:migrate"
+
+alias ga.="git add ."
+alias gs="git status"
+alias gpoh="git push origin head"
+
 alias cde="cd ~/Code/exercism/v3"
+
+set -gx PATH $PATH /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+
