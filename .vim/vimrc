@@ -43,6 +43,12 @@ let mapleader = ","
 autocmd FocusLost * :wa
 autocmd! BufWritePost ~/.vimrc source %
 
+" Allow to move in and out of terminals
+tnoremap <C-W><Up> <C-W>k
+tnoremap <C-W><Down> <C-W>j
+tnoremap <C-W><Left> <C-W>h
+tnoremap <C-W><Right> <C-W>l
+
 " Source the rest of the config
 exec 'source' path . 'functions/rename_file.vim'
 exec 'source' path . 'functions/delete_file.vim'

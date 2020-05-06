@@ -25,5 +25,5 @@ colorscheme dracula
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Always clear the cache when pressing CTRL-P to avoid missing new files
-:nnoremap <c-p> :CtrlPClearCache<bar>CtrlP<cr>
+nnoremap <c-p> :CtrlPClearCache<bar>CtrlP<cr>
 
