@@ -6,6 +6,7 @@ tap "homebrew/cask-fonts"
 brew "git"
 brew "fish"
 brew "tmux"
+brew 'vim'
 
 # Ruby
 brew "ruby-install"

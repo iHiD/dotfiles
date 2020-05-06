@@ -1,0 +1,52 @@
+let path = "$HOME/.vim/"
+exec 'source' path . 'defaults.vim'
+
+set showmode                      " Display the mode you're in.
+
+set hidden                        " Handle multiple buffers better.
+
+" Line numbers
+set number			  " Show line numbers
+set relativenumber 		  " Relative line numbers FTW.
+set ruler                         " Show cursor position.
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+
+" Search and replace
+set incsearch                     " Highlight matches as you type.
+set hlsearch                      " Highlight matches.
+set gdefault                      " Always assume /g in substituions
+set ignorecase                    " Case-insensitive searching.
+set smartcase                     " But case-sensitive if expression contains a capital letter.
+
+" Set linewrapping and context around cursor
+set nowrap                        " Turn on line wrapping.
+set scrolloff=3                   " Show 3 lines of context around the cursor.
+
+" For use in the terminal
+set title                         " Set the terminal's title
+set visualbell                    " No beeping.
+
+" Backups
+set nobackup                      " Don't make a backup before overwriting a file.
+set nowritebackup                 " And again.
+set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
+
+" Set my leader key
+let mapleader = ","
+
+" Save file on lost focus
+au FocusLost * :wa
+au! BufWritePost ~/.vimrc source %
+
+" Colors
+packadd! dracula
+"syntax enable
+colorscheme dracula
+
+" Ignore files in gitignore for CTRLP 
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" Source the rest of the config
+exec 'source' path . 'functions/rename_file.vim'
+exec 'source' path . 'functions/delete_file.vim'
+
