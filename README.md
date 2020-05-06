@@ -22,8 +22,7 @@ Firstly, we need Homebrew to manage dependencies.
 
 In the dotfiles we have a Brewfile. We need to install brew, install git, clone the dotfiles repo, then run the brewfile.
 
-
-- Install homebrew: https://brew.sh/
+Install homebrew: https://brew.sh/
 - `brew install git`
 - `git clone https://github.com/iHiD/dotfiles.git ~/.dotfiles`
 - `ln -s ~/.dotfiles/files/Brewfile ~/Brewfile`
@@ -95,4 +94,9 @@ Then get the latest npm and install yarn.
 ## Prettier
 
 I'm not 100% sure this is needed but I think it worked.
-`yarn global add prettier @prettier/plugin-ruby`
+- `yarn global add prettier @prettier/plugin-ruby`
+
+## Link misc dotfiles
+
+- `ln -s ~/.dotfiles/files/.ssh_config ~/.ssh/config`
+

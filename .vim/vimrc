@@ -31,6 +31,11 @@ set nobackup                      " Don't make a backup before overwriting a fil
 set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
+" Sort tabs out
+set tabstop=2 		          " Lets make tabs nice and wide
+set expandtab
+set softtabstop=2
+
 " Set my leader key
 let mapleader = ","
 
@@ -38,15 +43,7 @@ let mapleader = ","
 au FocusLost * :wa
 au! BufWritePost ~/.vimrc source %
 
-" Colors
-packadd! dracula
-"syntax enable
-colorscheme dracula
-
-" Ignore files in gitignore for CTRLP 
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
 " Source the rest of the config
 exec 'source' path . 'functions/rename_file.vim'
 exec 'source' path . 'functions/delete_file.vim'
-
+exec 'source' path . 'plugins.vim'
