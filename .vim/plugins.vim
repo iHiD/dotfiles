@@ -7,6 +7,11 @@ packloadall
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
+" Add PrettierAsync for all buffers
+autocmd BufWritePre *.rb,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html noautocmd | call prettier#Autoformat()
+autocmd FocusLost *.rb,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html noautocmd | call prettier#Autoformat()
+
+
 """
 " Colorscheme (dracula)
 """

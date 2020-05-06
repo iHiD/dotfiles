@@ -40,10 +40,11 @@ set softtabstop=2
 let mapleader = ","
 
 " Save file on lost focus
-au FocusLost * :wa
-au! BufWritePost ~/.vimrc source %
+autocmd FocusLost * :wa
+autocmd! BufWritePost ~/.vimrc source %
 
 " Source the rest of the config
 exec 'source' path . 'functions/rename_file.vim'
 exec 'source' path . 'functions/delete_file.vim'
 exec 'source' path . 'plugins.vim'
+
