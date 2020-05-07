@@ -27,3 +27,11 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 " Always clear the cache when pressing CTRL-P to avoid missing new files
 nnoremap <c-p> :CtrlPClearCache<bar>CtrlP<cr>
 
+"""
+" Matchit
+"""
+" `matchit.vim` is built-in so let's enable it!
+" Hit `%` on `if` to jump to `else`.
+runtime macros/matchit.vim
+
+
