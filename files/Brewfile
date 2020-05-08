@@ -6,7 +6,13 @@ tap "homebrew/cask-fonts"
 brew "git"
 brew "fish"
 brew "tmux"
+
+# Tooling
+brew 'ack'
+
+# Editors
 brew 'vim'
+brew 'the_silver_searcher'
 
 # Ruby
 brew "ruby-install"

@@ -35,3 +35,14 @@ nnoremap <c-p> :CtrlPClearCache<bar>CtrlP<cr>
 runtime macros/matchit.vim
 
 
+"""
+" Ackvim
+"""
+
+" Use `ag` command for the silver surfer
+let g:ackprg = 'ag --nogroup --nocolor --column'                                               
+
+" Remap CTRL-F
+noremap <C-F> :Ack! 
+
+
