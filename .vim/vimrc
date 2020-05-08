@@ -10,6 +10,7 @@ set number			  " Show line numbers
 set relativenumber 		  " Relative line numbers FTW.
 set ruler                         " Show cursor position.
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+set cursorline
 
 " Search and replace
 set incsearch                     " Highlight matches as you type.
@@ -54,3 +55,5 @@ exec 'source' path . 'functions/rename_file.vim'
 exec 'source' path . 'functions/delete_file.vim'
 exec 'source' path . 'plugins.vim'
 
+" Project specific commands
+noremap <Leader>cde :cd /Users/iHiD/Code/exercism/v3<CR>:source layout.vim<CR>:NERDTree<CR><C-W><Right>

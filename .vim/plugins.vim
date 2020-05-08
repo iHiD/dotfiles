@@ -8,8 +8,10 @@ let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
 " Add PrettierAsync for all buffers
-autocmd BufWritePre *.rb,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html noautocmd | call prettier#Autoformat()
-autocmd FocusLost *.rb,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html noautocmd | call prettier#Autoformat()
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html noautocmd | call prettier#Autoformat()
+autocmd FocusLost *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html noautocmd | call prettier#Autoformat()
+
+"autocmd FocusLost *.rb noautocmd | call RuboCop()
 
 
 """
@@ -46,3 +48,19 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 noremap <C-F> :Ack! 
 
 
+"""
+" Coc
+"""
+let g:coc_global_extensions = ['coc-solargraph']
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+      
