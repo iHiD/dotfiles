@@ -27,7 +27,7 @@ set -U fish_pager_color_progress brwhite --background=cyan
 source /usr/local/share/chruby/chruby.fish
 source /usr/local/share/chruby/auto.fish
 
-alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
+alias brewup='cd ~; brew update; brew upgrade; brew bundle; brew cleanup; brew doctor'
 alias ls="ls -lasG"
 
 #alias bert="bundle exec rake test"

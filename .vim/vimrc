@@ -53,6 +53,7 @@ tnoremap <C-W><Right> <C-W>l
 " Source the rest of the config
 exec 'source' path . 'functions/rename_file.vim'
 exec 'source' path . 'functions/delete_file.vim'
+exec 'source' path . 'functions/mandate.vim'
 exec 'source' path . 'plugins.vim'
 
 " Project specific commands

@@ -9,6 +9,7 @@ brew "tmux"
 
 # Tooling
 brew 'ack'
+brew 'tldr'
 
 # Editors
 brew 'vim'
