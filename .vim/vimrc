@@ -6,8 +6,7 @@ set showmode                      " Display the mode you're in.
 set hidden                        " Handle multiple buffers better.
 
 " Line numbers
-set number			  " Show line numbers
-set relativenumber 		  " Relative line numbers FTW.
+set relativenumber 		            " Relative line numbers FTW.
 set ruler                         " Show cursor position.
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 set cursorline
@@ -20,7 +19,7 @@ set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 
 " Set linewrapping and context around cursor
-set nowrap                        " Turn on line wrapping.
+set nowrap                        " Turn off line wrapping.
 set scrolloff=3                   " Show 3 lines of context around the cursor.
 
 " For use in the terminal
