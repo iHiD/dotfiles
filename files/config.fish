@@ -24,8 +24,14 @@ set -U fish_pager_color_description B3A06D yellow
 set -U fish_pager_color_prefix white --bold --underline
 set -U fish_pager_color_progress brwhite --background=cyan
 
+set -gx EDITOR vim
+
 source /usr/local/share/chruby/chruby.fish
 source /usr/local/share/chruby/auto.fish
+
+# This command allows cruby to run inside vim's shell 
+# with the correct env set up
+chruby_auto 
 
 alias brewup='cd ~; brew update; brew upgrade; brew bundle; brew cleanup; brew doctor'
 alias ls="ls -lasG"
@@ -39,6 +45,3 @@ alias gs="git status"
 alias gpoh="git push origin head"
 
 alias cde="cd ~/Code/exercism/v3"
-
-set -gx PATH $PATH /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
-

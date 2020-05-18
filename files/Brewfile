@@ -27,6 +27,11 @@ brew 'nvm'
 # Databases
 brew 'mysql', restart_service: true
 
+# Dev-dependencies
+brew 'libgit2' 
+brew 'cmake'
+brew 'pkg-config'
+
 # Casks
 cask "font-fira-code"
 #cask 'google-chrome'

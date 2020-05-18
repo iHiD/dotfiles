@@ -32,7 +32,8 @@ set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
 " Sort tabs out
-set tabstop=2 		          " Lets make tabs nice and wide
+set tabstop=2 		          
+set shiftwidth=2 		        
 set expandtab
 set softtabstop=2
 
@@ -48,6 +49,12 @@ tnoremap <C-W><Up> <C-W>k
 tnoremap <C-W><Down> <C-W>j
 tnoremap <C-W><Left> <C-W>h
 tnoremap <C-W><Right> <C-W>l
+
+" Set up directory navigation that makes sense 
+" to my fingers
+set wildmode=longest:full,full
+
+set shellcmdflag=-lc
 
 " Source the rest of the config
 exec 'source' path . 'functions/rename_file.vim'

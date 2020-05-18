@@ -4,6 +4,7 @@ function! RunMandate(className)
     :normal iclass
     exec "%s/class/class " . a:className
     :normal oinclude Mandate
+    :normal o
     :normal oinitialize_with
     :normal o
     :normal odef call
