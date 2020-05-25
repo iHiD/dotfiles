@@ -73,6 +73,7 @@ Don't install this from homebrew. Instead download the most recent DMG from http
 Let's get VIM setup:
 
 `ln -s ~/.dotfiles/.vim ~/.vim`
+`ln -s ~/.dotfiles/files/.gvimrc ~/.gvimrc`
 
 ## Git
 
