@@ -18,7 +18,9 @@ Generate a key, add it to keychain, and put it on the clipboard:
 - `ssh-add -K ~/.ssh/id_rsa`
 - `pbcopy < ~/.ssh/id_rsa.pub`
 
-Then paste it into GitHub.
+Then paste it into GitHub at https://github.com/settings/keys
+
+Also consider adding to chef repos (at `blob/master/cookbooks/users/templates/default/iHiD_pub.erb`)
 
 ## Homebrew
 
