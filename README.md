@@ -2,6 +2,10 @@
 
 This is my personal setup for setting up a Mac for development. Suggestions welcome in issues. PRs less welcome unless you know me and are pretty sure I'd appreciate it :)
 
+## BEFORE YOU START
+
+As initial users have more restrictive rules regarding name captialization, remember to create a non-primary user first (called something like `tempuser`) . Create that user, then a real one for `iHiD`, then delete the old one.
+
 ## 1Password
 
 Download, configure. Phone required.
