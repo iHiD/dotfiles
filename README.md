@@ -10,8 +10,23 @@ As initial users have more restrictive rules regarding name captialization, reme
 
 ### Settings/Touchpad 
 
-- Touchpad: Tap to click: on
+- Touchpad: `Tap to click: On`
 - Displays: Night Shift: `Custom: 22:00 to 9:00`, `More Warm`
+
+### Finder
+
+Preferences:
+- Turn on Hard Disks
+- Turn on External Disks
+- Turn off CDs...
+- Turn off Connected Servers
+- New finder windows shows iHiD
+
+Sidebar:
+**TODO - Insert image**
+
+Advanced:
+- Show all filename extensions
 
 ## 1Password
 
