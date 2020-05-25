@@ -6,3 +6,6 @@
 
 # Editor project files
 *.code-workspace
+
+# Mac files
+.DS_Store

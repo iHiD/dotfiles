@@ -100,3 +100,6 @@ I'm not 100% sure this is needed but I think it worked.
 
 - `ln -s ~/.dotfiles/files/.ssh_config ~/.ssh/config`
 
+## Ngrok
+
+Add the auth token from https://dashboard.ngrok.com/get-started/setup

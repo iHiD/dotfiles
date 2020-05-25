@@ -36,3 +36,4 @@ brew 'pkg-config'
 cask "font-fira-code"
 #cask 'google-chrome'
 cask 'spotify'
+cask 'ngrok'
