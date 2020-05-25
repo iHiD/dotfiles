@@ -25,6 +25,7 @@ Preferences:
 Sidebar:
 **TODO - Insert image**
 
+
 Advanced:
 - Show all filename extensions
 
@@ -78,7 +79,8 @@ Configure Git correctly (it was installed in the step above)
 
 ## Terminal
 
-Load iHiD terminal from dotfiles:/files
+- Import iHiD terminal from `~/.dotfiles/files` (`CMD-SHIFT-.` show files).
+- Set iHiD terminal to default
 
 ## Fish
 
