@@ -6,6 +6,13 @@ This is my personal setup for setting up a Mac for development. Suggestions welc
 
 As initial users have more restrictive rules regarding name captialization, remember to create a non-primary user first (called something like `tempuser`) . Create that user, then a real one for `iHiD`, then delete the old one.
 
+## Mac Setup
+
+### Settings/Touchpad 
+
+- Touchpad: Tap to click: on
+- Displays: Night Shift: `Custom: 22:00 to 9:00`, `More Warm`
+
 ## 1Password
 
 Download, configure. Phone required.
