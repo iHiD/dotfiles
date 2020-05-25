@@ -8,10 +8,15 @@ As initial users have more restrictive rules regarding name captialization, reme
 
 ## Mac Setup
 
+## Toolbar
+
+- Show battery percentage
+
 ### Settings/Touchpad 
 
-- Touchpad: `Tap to click: On`
-- Displays: Night Shift: `Custom: 22:00 to 9:00`, `More Warm`
+- Touchpad -> Check `Tap to click`
+- Displays -> Night Shift -> `Custom: 22:00 to 9:00`, `More Warm`
+- Sound -> Sound Effects: Check `Show volume in menu bar` 
 
 ### Finder
 
