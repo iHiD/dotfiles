@@ -5,3 +5,5 @@
 	email = jez.walker@gmail.com
 [core]
 	excludesfile = /Users/iHiD/.gitignore_global
+[init]
+	templatedir = ~/.git_template

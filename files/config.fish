@@ -41,6 +41,9 @@ alias rdm="rake db:migrate"
 
 alias ga.="git add ."
 alias gs="git status"
+alias gcp="git cherry-pick"
 alias gpoh="git push origin head"
+alias deploy="bundle exec cap production deploy"
 
 alias cde="cd ~/Code/exercism/v3"
+alias cdk="cd ~/Code/kaido/website"

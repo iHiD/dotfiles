@@ -28,3 +28,6 @@
 [submodule ".vim/pack/vendor/start/ack.vim"]
 	path = .vim/pack/vendor/start/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
+[submodule ".vim/pack/vendor/start/vim-terraform"]
+	path = .vim/pack/vendor/start/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git

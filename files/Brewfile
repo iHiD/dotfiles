@@ -10,6 +10,9 @@ brew "tmux"
 # Tooling
 brew 'ack'
 brew 'tldr'
+brew 'wget'
+brew 'imagemagick'
+brew 'dsh'
 
 # Editors
 brew 'vim'
@@ -32,8 +35,13 @@ brew 'libgit2'
 brew 'cmake'
 brew 'pkg-config'
 
+# AWS
+brew 'awscli@2'
+brew 'terraform'
+
 # Casks
 cask "font-fira-code"
-#cask 'google-chrome'
+cask 'google-chrome'
 cask 'spotify'
 cask 'ngrok'
+cask 'slack'

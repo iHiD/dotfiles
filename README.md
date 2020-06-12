@@ -18,6 +18,12 @@ As initial users have more restrictive rules regarding name captialization, reme
 - Displays -> Night Shift -> `Custom: 22:00 to 9:00`, `More Warm`
 - Sound -> Sound Effects: Check `Show volume in menu bar` 
 
+### Settings/Displays
+- Night Shift: `Custom: 22:00 to 9:00`, `More Warm`
+
+### Settings/BlueTooth
+- Check "Show bluetooth in menu bar"
+
 ### Finder
 
 Preferences:
@@ -139,3 +145,24 @@ I'm not 100% sure this is needed but I think it worked.
 ## Ngrok
 
 Add the auth token from https://dashboard.ngrok.com/get-started/setup
+
+## Download exercism website
+
+```
+mkdir -p ~/Code/exercism
+git clone git@github.com:exercism/website.git ~/Code/exercism/website
+```
+
+## Lolcommits
+
+```
+gem install lolcommits
+
+cd ~/Code/exercism/website
+lolcommits --enable
+
+mkdir -p ~/.git_template/hooks
+git config --global init.templatedir '~/.git_template'
+
+cp ~/Code/exercism/website/.git/hooks/post-commit ~/.git_template/hooks/
+```
