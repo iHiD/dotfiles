@@ -4,5 +4,5 @@ set lines=1000 columns=1000
 set macligatures
 set guifont=FiraCode-Retina:h14
 
-:an TouchBar.Prettier :Prettier<CR>
+:an TouchBar.Lint :Lint<CR>
 

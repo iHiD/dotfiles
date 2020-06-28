@@ -1,9 +1,6 @@
 [submodule ".vim/pack/themes/start/dracula"]
 	path = .vim/pack/themes/start/dracula
 	url = https://github.com/dracula/vim.git
-[submodule ".vim/pack/vendor/start/vim-rubocop"]
-	path = .vim/pack/vendor/start/vim-rubocop
-	url = https://github.com/ngmy/vim-rubocop.git
 [submodule ".vim/pack/vendor/start/vim-prettier"]
 	path = .vim/pack/vendor/start/vim-prettier
 	url = https://github.com/prettier/vim-prettier.git

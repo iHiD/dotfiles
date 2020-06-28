@@ -60,6 +60,7 @@ set shellcmdflag=-lc
 exec 'source' path . 'functions/rename_file.vim'
 exec 'source' path . 'functions/delete_file.vim'
 exec 'source' path . 'functions/mandate.vim'
+exec 'source' path . 'functions/lint.vim'
 exec 'source' path . 'plugins.vim'
 
 " Project specific commands

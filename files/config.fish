@@ -36,7 +36,7 @@ chruby_auto
 alias brewup='cd ~; brew update; brew upgrade; brew bundle; brew cleanup; brew doctor'
 alias ls="ls -lasG"
 
-alias bert="bundle exec rake test"
+#alias bert="bundle exec rake test"
 alias rdm="rake db:migrate"
 
 alias ga.="git add ."

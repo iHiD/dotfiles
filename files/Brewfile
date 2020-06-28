@@ -2,6 +2,9 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 tap "homebrew/cask-fonts"
 
+# My products
+brew "exercism"
+
 # Essentials
 brew "git"
 brew "fish"
@@ -23,12 +26,15 @@ brew "ruby-install"
 brew "chruby"
 brew "chruby-fish"
 brew "gel"
+brew "anycable-go"
+brew "hivemind"
 
 # Javascript
 brew 'nvm'
 
 # Databases
 brew 'mysql', restart_service: true
+brew 'redis', restart_service: true
 
 # Dev-dependencies
 brew 'libgit2' 
