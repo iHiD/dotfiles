@@ -4,5 +4,9 @@ set lines=1000 columns=1000
 set macligatures
 set guifont=FiraCode-Retina:h14
 
-:an TouchBar.Lint :Lint<CR>
+if has("gui_macvim")
+  " Remove existing icons from touch bar
+  aunmenu TouchBar.
+endif
 
+:an TouchBar.Lint :Lint<CR>

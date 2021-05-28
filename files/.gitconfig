@@ -1,9 +1,12 @@
 # This is Git's per-user configuration file.
 [user]
-# Please adapt and uncomment the following lines:
 	name = Jeremy Walker
 	email = jez.walker@gmail.com
 [core]
 	excludesfile = /Users/iHiD/.gitignore_global
 [init]
 	templatedir = ~/.git_template
+[advice]
+	detachedHead = false
+[pull]
+	ff = only

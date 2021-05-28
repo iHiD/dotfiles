@@ -32,10 +32,29 @@ set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
 " Sort tabs out
-set tabstop=2 		          
-set shiftwidth=2 		        
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set softtabstop=2
+
+" Set emojis to be correct width
+" set ambiwidth=double
+call setcellwidths([str2list('✳️') + [2]])
+
+" Show hidden characters
+set list
+set listchars=tab:→\ ,nbsp:␣,trail:•,precedes:«,extends:»
+highlight NbspChar ctermbg=196 guibg=#FF1100 ctermfg=white guifg=white
+match NbspChar /\%u00a0/
+:nnoremap R :%s/\%u00a0//g<cr><c-o><cr>:nohlsearch<cr>
+
+" Show trailing whitespace
+highlight ExtraWhitespace ctermbg=196 guibg=#FF1100 ctermfg=white guifg=white
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+:nnoremap W :%s/[\t ]*$//g<cr><c-o><cr>:nohlsearch<cr>
 
 " Set my leader key
 let mapleader = ","
@@ -50,7 +69,7 @@ tnoremap <C-W><Down> <C-W>j
 tnoremap <C-W><Left> <C-W>h
 tnoremap <C-W><Right> <C-W>l
 
-" Set up directory navigation that makes sense 
+" Set up directory navigation that makes sense
 " to my fingers
 set wildmode=longest:full,full
 

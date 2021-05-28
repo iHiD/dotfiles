@@ -28,3 +28,6 @@
 [submodule ".vim/pack/vendor/start/vim-terraform"]
 	path = .vim/pack/vendor/start/vim-terraform
 	url = https://github.com/hashivim/vim-terraform.git
+[submodule ".vim/pack/vendor/start/coc.nvim"]
+	path = .vim/pack/vendor/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git

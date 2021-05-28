@@ -1,12 +1,15 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
 tap "homebrew/cask-fonts"
+tap "aws/tap"
 
 # My products
 brew "exercism"
 
 # Essentials
 brew "git"
+brew "git-lfs"
+brew "gh"
 brew "fish"
 brew "tmux"
 
@@ -29,8 +32,9 @@ brew "gel"
 brew "anycable-go"
 brew "hivemind"
 
-# Javascript
+# Other Languages
 brew 'nvm'
+brew 'nim'
 
 # Databases
 brew 'mysql', restart_service: true
@@ -44,6 +48,10 @@ brew 'pkg-config'
 # AWS
 brew 'awscli@2'
 brew 'terraform'
+brew 'aws-sam-cli'
+
+# Misc Dev things
+brew 'zmq'
 
 # Casks
 cask "font-fira-code"
