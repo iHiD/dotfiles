@@ -104,7 +104,7 @@ Fish will be installed via Homebrew. Run these to make it default:
 
 Install fisher (you may need to get the real URL of https://git.io/fisher):
 
-- `curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish`
+- `curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher`
 - `ln -s ~/.dotfiles/files/fishfile ~/.config/fish/fishfile`
 - `fish -c fisher`
 
