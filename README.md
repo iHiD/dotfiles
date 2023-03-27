@@ -126,6 +126,7 @@ Create a ruby version file using:
 
 `nvm` is installed via fisher. Run this to install node:
 
+- `nvm install lts`
 - `nvm use lts`
 
 Then get the latest npm and install yarn.
@@ -151,18 +152,4 @@ Add the auth token from https://dashboard.ngrok.com/get-started/setup
 ```
 mkdir -p ~/Code/exercism
 git clone git@github.com:exercism/website.git ~/Code/exercism/website
-```
-
-## Lolcommits
-
-```
-gem install lolcommits
-
-cd ~/Code/exercism/website
-lolcommits --enable
-
-mkdir -p ~/.git_template/hooks
-git config --global init.templatedir '~/.git_template'
-
-cp ~/Code/exercism/website/.git/hooks/post-commit ~/.git_template/hooks/
 ```
