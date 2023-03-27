@@ -102,7 +102,7 @@ Fish will be installed via Homebrew. Run these to make it default:
 - `chsh -s /usr/local/bin/fish`
 - `ln ~/.dotfiles/files/config.fish ~/.config/fish/config.fish`
 
-Install fisher:
+Install fisher (you may need to get the real URL of https://git.io/fisher):
 
 - `curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish`
 - `ln -s ~/.dotfiles/files/fishfile ~/.config/fish/fishfile`
@@ -120,7 +120,7 @@ Download: https://www.alfredapp.com/
 - `ruby-install ruby`
 
 Create a ruby version file using:
-- `echo "ruby-2.7" > ~/.ruby-version`
+- `echo "ruby-3.2.1" > ~/.ruby-version`
 
 ## Javascript
 
