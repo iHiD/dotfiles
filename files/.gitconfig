@@ -6,6 +6,7 @@
 	excludesfile = /Users/iHiD/.gitignore_global
 [init]
 	templatedir = ~/.git_template
+	defaultBranch = main
 [advice]
 	detachedHead = false
 [pull]

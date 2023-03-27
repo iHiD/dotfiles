@@ -3,6 +3,7 @@
 *.swo
 *.swn
 *.swm
+*.swl
 
 # Editor project files
 *.code-workspace

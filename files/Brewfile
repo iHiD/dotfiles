@@ -2,6 +2,8 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 tap "homebrew/cask-fonts"
 tap "aws/tap"
+tap "exercism/wren"
+tap "stripe/stripe-cli"
 
 # My products
 brew "exercism"
@@ -12,6 +14,7 @@ brew "git-lfs"
 brew "gh"
 brew "fish"
 brew "tmux"
+brew "openssl"
 
 # Tooling
 brew 'ack'
@@ -19,6 +22,7 @@ brew 'tldr'
 brew 'wget'
 brew 'imagemagick'
 brew 'dsh'
+brew 'vips'
 
 # Editors
 brew 'vim'
@@ -31,10 +35,16 @@ brew "chruby-fish"
 brew "gel"
 brew "anycable-go"
 brew "hivemind"
+brew "proj"
 
 # Other Languages
 brew 'nvm'
 brew 'nim'
+brew 'wren-console'
+brew 'python@3.10'
+brew 'python-tk'
+brew 'pillow' # Python imaging library
+brew 'opencv' # Python opencv library
 
 # Databases
 brew 'mysql', restart_service: true
@@ -52,6 +62,7 @@ brew 'aws-sam-cli'
 
 # Misc Dev things
 brew 'zmq'
+brew 'stripe/stripe-cli/stripe'
 
 # Casks
 cask "font-fira-code"
@@ -59,3 +70,4 @@ cask 'google-chrome'
 cask 'spotify'
 cask 'ngrok'
 cask 'slack'
+cask 'keycastr'
