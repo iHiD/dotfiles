@@ -26,8 +26,8 @@ set -U fish_pager_color_progress brwhite --background=cyan
 
 set -gx EDITOR vim
 
-source /usr/local/share/chruby/chruby.fish
-source /usr/local/share/chruby/auto.fish
+source /opt/homebrew/share/fish/vendor_functions.d/chruby.fish
+# source /opt/homebrew/share/fish/vendor_funcions.d/auto.fish
 
 # This command allows cruby to run inside vim's shell 
 # with the correct env set up
@@ -43,7 +43,5 @@ alias ga.="git add ."
 alias gs="git status"
 alias gcp="git cherry-pick"
 alias gpoh="git push origin head"
-alias deploy="bundle exec cap production deploy"
 
-alias cde="cd ~/Code/exercism/v3"
-alias cdk="cd ~/Code/kaido/website"
+alias cde="cd ~/Code/exercism/website"

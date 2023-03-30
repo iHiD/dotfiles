@@ -83,4 +83,4 @@ exec 'source' path . 'functions/lint.vim'
 exec 'source' path . 'plugins.vim'
 
 " Project specific commands
-noremap <Leader>cde :cd /Users/iHiD/Code/exercism/v3<CR>:source layout.vim<CR>:NERDTree<CR><C-W><Right>
+noremap <Leader>cde :cd /Users/iHiD/Code/exercism/website<CR>:source layout.vim<CR>:NERDTree<CR><C-W><Right>
