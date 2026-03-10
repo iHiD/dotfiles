@@ -1,0 +1,94 @@
+{
+    "files.exclude": {
+        "**/*.swo": true,
+        "**/*.swp": true
+    },
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "editor.minimap.enabled": false,
+    "editor.tabSize": 2,
+    "editor.indentSize": "tabSize",
+    "files.autoSave": "onFocusChange",
+    "breadcrumbs.enabled": false,
+    "workbench.editor.showTabs": "single",
+    "editor.stickyScroll.enabled": false,
+    "editor.scrollBeyondLastLine": false,
+    "editor.fontSize": 14,
+    "editor.fontFamily": "FiraCode-Retina, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": 450,
+    "vscode-neovim.neovimClean": true,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "terminal.integrated.defaultProfile.osx": "fish",
+    "zenMode.hideLineNumbers": false,
+    "editor.inlineSuggest.suppressSuggestions": true,
+    "editor.autoClosingBrackets": "never",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "extensions.autoCheckUpdates": false,
+    "update.mode": "manual",
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "html",
+        "typescriptreact"
+    ],
+    "html.autoClosingTags": false,
+    "javascript.autoClosingTags": false,
+    "typescript.autoClosingTags": false,
+    "terminal.integrated.profiles.osx": {
+
+        "bash": {
+            "path": "bash",
+            "args": [
+                "-l"
+            ],
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh",
+            "args": [
+                "-l"
+            ]
+        },
+        "fish": {
+            "path": "fish",
+            "args": [
+                "-l"
+            ]
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    },
+    "amp.url": "https://ampcode.com/",
+    "amp.commands.allowlist": [
+        "bundle"
+    ],
+    "github.copilot.advanced": {
+
+    },
+    "github.copilot.chat.localeOverride": "en",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "explorer.confirmDragAndDrop": false,
+    "claudeCode.preferredLocation": "panel",
+    "editor.wordWrap": "off",
+    "editor.accessibilitySupport": "off",
+    "accessibility.signalOptions.volume": 0,
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleTypeDefinitions": "goto",
+    "editor.gotoLocation.multipleDeclarations": "goto",
+    "editor.gotoLocation.multipleImplementations": "goto",
+    "editor.gotoLocation.multipleReferences": "goto"
+}
